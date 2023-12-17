@@ -6,7 +6,8 @@ router.get("/", (req, res) => {
 
     let queryText =
     `
-    SELECT * FROM "todos";           
+    SELECT * FROM "todos"
+    ORDER BY "id";           
     `;
 
     pool.query(queryText)
@@ -52,7 +53,7 @@ router.put("/toggleIsComplete/:id", (req, res) => {
 
     let queryText =
     `
-    UPDATE "todos" SET "isComplete" = Not "isComplete" 
+    UPDATE "todos" SET "isComplete" = TRUE
     WHERE "id" = $1;
     `;
 
