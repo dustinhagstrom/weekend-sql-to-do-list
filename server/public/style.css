@@ -1,0 +1,22 @@
+.completed {
+    background-color: green;
+    color: white;
+    text-decoration: line-through;
+    text-decoration-thickness: 4px;
+    text-decoration-color: black;
+}
+
+.notCompleted {
+    background-color: red;
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid purple;
+}
+
+th, td {
+    padding: 3px;
+}

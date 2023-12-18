@@ -53,7 +53,7 @@ router.put("/toggleIsComplete/:id", (req, res) => {
 
     let queryText =
     `
-    UPDATE "todos" SET "isComplete" = TRUE
+    UPDATE "todos" SET "isComplete" = Not "isComplete" 
     WHERE "id" = $1;
     `;
 

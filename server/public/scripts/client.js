@@ -35,8 +35,8 @@ function appendsTodosToTable(arrayOfTodos) {
             todo.isComplete ? "completed" : "notCompleted"
         }">
             <td>${todo.text}</td>
-            <td><button data-testid="completeButton" onclick="markCompleted(event)">Mark Complete</button></td>
-            <td><button data-testid="deleteButton" onclick="deleteTodo(event)">Delete</button></td>
+            <td><button class="btn btn-dark" onclick="markCompleted(event)">${todo.isComplete ? "Mark Incomplete" : "Mark Complete"}</button></td>
+            <td><button class="btn btn-dark" onclick="deleteTodo(event)">Delete</button></td>
             </tr>
         `;
     }
@@ -57,6 +57,7 @@ function createTodo(event) {
         .then((res) => {
             // console.log("successfully create a TODO!");
             // match UI state to DB state
+            toDoTextInput.value = '';
             onReady();
         })
         .catch((err) => {
