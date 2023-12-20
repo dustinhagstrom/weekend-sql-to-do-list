@@ -1,5 +1,4 @@
 // console.log('JS is sourced!');
-require('dotenv').config();
 
 /**
  * DOM elements of interest
