@@ -6,10 +6,11 @@
 let tbody = document.getElementById("todoTbody");
 let toDoTextInput = document.getElementById("toDoTextInput");
 
+
 function onReady() {
     axios({
         method: "GET",
-        url: "/todos",
+        url: `${process.env.AXIOS_URL}/todos`,
     })
         .then((res) => {
             // console.log("data from response:", res.data);
@@ -51,7 +52,7 @@ function createTodo(event) {
     let text = toDoTextInput.value;
     axios({
         method: "POST",
-        url: "/todos",
+        url: `${process.env.AXIOS_URL}/todos`,
         data: { text },
     })
         .then((res) => {
@@ -73,7 +74,7 @@ function markCompleted(event) {
     // console.log("rowId to update:", rowId);
     axios({
         method: "PUT",
-        url: `/todos/toggleIsComplete/${rowId}`,
+        url: `${process.env.AXIOS_URL}/todos/toggleIsComplete/${rowId}`,
     })
         .then((res) => {
             // console.log(`successfully updated todo with id ${rowId}`);
@@ -93,7 +94,7 @@ function deleteTodo(event) {
     // console.log("rowId to delete:", rowId);
     axios({
         method: "DELETE",
-        url: `/todos/deleteById/${rowId}`,
+        url: `${process.env.AXIOS_URL}/todos/deleteById/${rowId}`,
     })
         .then((res) => {
             // console.log(`successfully deleted todo with id ${rowId}`);
