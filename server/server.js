@@ -3,7 +3,7 @@ const app = express();
 
 const todos = require('./routes/todos.router.js');
 
-let PORT = process.env.PORT || 5000;
+let PORT = process.env.PORT || 3000;
 
 // Do not modify this!
 if (process.env.NODE_ENV == 'test') {
