@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-
+require('dotenv').config();
 const todos = require('./routes/todos.router.js');
 
 let PORT = process.env.PORT || 3000;

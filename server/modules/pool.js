@@ -1,4 +1,5 @@
-const pg = require('pg')
+const pg = require('pg');
+require('dotenv').config();
 
 let databaseName = 'weekend-to-do-app'
 

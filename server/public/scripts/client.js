@@ -1,4 +1,5 @@
 // console.log('JS is sourced!');
+require('dotenv').config();
 
 /**
  * DOM elements of interest
@@ -10,7 +11,7 @@ let toDoTextInput = document.getElementById("toDoTextInput");
 function onReady() {
     axios({
         method: "GET",
-        url: `${process.env.AXIOS_URL}/todos`,
+        url: `https://dustinhagstrom.codes/todos`,
     })
         .then((res) => {
             // console.log("data from response:", res.data);
@@ -52,7 +53,7 @@ function createTodo(event) {
     let text = toDoTextInput.value;
     axios({
         method: "POST",
-        url: `${process.env.AXIOS_URL}/todos`,
+        url: `https://dustinhagstrom.codes/todos`,
         data: { text },
     })
         .then((res) => {
@@ -74,7 +75,7 @@ function markCompleted(event) {
     // console.log("rowId to update:", rowId);
     axios({
         method: "PUT",
-        url: `${process.env.AXIOS_URL}/todos/toggleIsComplete/${rowId}`,
+        url: `https://dustinhagstrom.codes/todos/toggleIsComplete/${rowId}`,
     })
         .then((res) => {
             // console.log(`successfully updated todo with id ${rowId}`);
@@ -94,7 +95,7 @@ function deleteTodo(event) {
     // console.log("rowId to delete:", rowId);
     axios({
         method: "DELETE",
-        url: `${process.env.AXIOS_URL}/todos/deleteById/${rowId}`,
+        url: `https://dustinhagstrom.codes/todos/deleteById/${rowId}`,
     })
         .then((res) => {
             // console.log(`successfully deleted todo with id ${rowId}`);
