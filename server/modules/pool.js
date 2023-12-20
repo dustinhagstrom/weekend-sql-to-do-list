@@ -12,6 +12,7 @@ const pool = new pg.Pool({
     user: process.env.DATABASE_USER,
     port: 5432,
     database: databaseName,
+    password: process.env.DATABASE_PWD,
     allowExitOnIdle: true 
 })
 
