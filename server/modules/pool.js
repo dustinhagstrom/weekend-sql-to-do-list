@@ -8,11 +8,7 @@ if (process.env.NODE_ENV === 'test') {
 }
 
 const pool = new pg.Pool({
-    host: process.env.DATABASE_URL,
-    user: process.env.DATABASE_USER,
-    port: 5432,
-    database: databaseName,
-    password: process.env.DATABASE_PWD,
+    connectionString: `${process.env.CONNECTION_STRING}${databaseName}`,
     allowExitOnIdle: true 
 })
 
