@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 const todos = require('./routes/todos.router.js');
@@ -10,6 +11,7 @@ if (process.env.NODE_ENV == 'test') {
   PORT = 5002;
 }
 
+app.use(cors());
 app.use(express.static('./server/public'));
 app.use(express.json());
 
