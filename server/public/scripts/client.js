@@ -10,7 +10,7 @@ let toDoTextInput = document.getElementById("toDoTextInput");
 function onReady() {
     axios({
         method: "GET",
-        url: `https://dustinhagstrom.codes/todos`,
+        url: `/todos`,
     })
         .then((res) => {
             // console.log("data from response:", res.data);
@@ -52,7 +52,7 @@ function createTodo(event) {
     let text = toDoTextInput.value;
     axios({
         method: "POST",
-        url: `https://dustinhagstrom.codes/todos`,
+        url: `/todos`,
         data: { text },
     })
         .then((res) => {
@@ -74,7 +74,7 @@ function markCompleted(event) {
     // console.log("rowId to update:", rowId);
     axios({
         method: "PUT",
-        url: `https://dustinhagstrom.codes/todos/toggleIsComplete/${rowId}`,
+        url: `/todos/toggleIsComplete/${rowId}`,
     })
         .then((res) => {
             // console.log(`successfully updated todo with id ${rowId}`);
@@ -94,7 +94,7 @@ function deleteTodo(event) {
     // console.log("rowId to delete:", rowId);
     axios({
         method: "DELETE",
-        url: `https://dustinhagstrom.codes/todos/deleteById/${rowId}`,
+        url: `/todos/deleteById/${rowId}`,
     })
         .then((res) => {
             // console.log(`successfully deleted todo with id ${rowId}`);
